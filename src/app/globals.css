@@ -1,36 +1,196 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --accent: #1a1a1a;
+  --font-courier: 'Courier Prime', monospace;
+  --font-mono: 'Space Mono', monospace;
+  --font-plex: 'IBM Plex Mono', monospace;
+  --color-orange: #ff6b35;
+  --color-orange-dark: #e55a2b;
+  --color-orange-light: #ff8c5a;
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-900: #1a1a1a;
+  --color-gray-800: #2d2d2d;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-serif: var(--font-playfair);
-  --font-mono: var(--font-courier);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --accent: #f5f5f5;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-serif);
+  font-family: var(--font-courier);
+  background: var(--color-gray-50);
+  color: var(--color-gray-900);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.font-serif {
-  font-family: var(--font-serif);
+.typewriter-text {
+  font-family: var(--font-courier);
+  font-weight: 400;
 }
 
-.font-mono {
+.mono-text {
   font-family: var(--font-mono);
+  font-weight: 400;
+}
+
+.plex-text {
+  font-family: var(--font-plex);
+  font-weight: 400;
+}
+
+.orange-accent {
+  color: var(--color-orange);
+}
+
+.orange-bg {
+  background-color: var(--color-orange);
+}
+
+.orange-border {
+  border-color: var(--color-orange);
+}
+
+.orange-hover:hover {
+  color: var(--color-orange-dark);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-orange);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-orange-dark);
+}
+
+/* Typewriter cursor animation */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.typewriter-cursor::after {
+  content: '|';
+  animation: blink 1s infinite;
+  color: var(--color-orange);
+}
+
+/* Link styles */
+a {
+  color: var(--color-orange);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  color: var(--color-orange-dark);
+  border-bottom: 1px solid var(--color-orange-dark);
+}
+
+/* Button styles */
+.typewriter-button {
+  background: var(--color-gray-900);
+  color: var(--color-gray-50);
+  border: 2px solid var(--color-gray-900);
+  padding: 12px 24px;
+  font-family: var(--font-courier);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.typewriter-button:hover {
+  background: var(--color-orange);
+  color: var(--color-gray-900);
+  border-color: var(--color-orange);
+}
+
+/* Card styles */
+.typewriter-card {
+  background: var(--color-gray-50);
+  border: 2px solid var(--color-gray-900);
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.typewriter-card:hover {
+  border-color: var(--color-orange);
+  box-shadow: 4px 4px 0px var(--color-orange);
+}
+
+/* Section styles */
+.typewriter-section {
+  border-top: 3px solid var(--color-orange);
+  padding-top: 48px;
+  margin-top: 48px;
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-courier);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Dev mode styles */
+.dev-mode {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.dev-panel {
+  background: var(--color-gray-900);
+  color: var(--color-gray-50);
+  border: 2px solid var(--color-orange);
+  padding: 20px;
+  max-width: 400px;
+  font-family: var(--font-courier);
+}
+
+.dev-input {
+  background: var(--color-gray-800);
+  border: 1px solid var(--color-orange);
+  color: var(--color-gray-50);
+  padding: 8px 12px;
+  font-family: var(--font-courier);
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.dev-textarea {
+  background: var(--color-gray-800);
+  border: 1px solid var(--color-orange);
+  color: var(--color-gray-50);
+  padding: 8px 12px;
+  font-family: var(--font-courier);
+  width: 100%;
+  min-height: 120px;
+  margin-bottom: 12px;
+  resize: vertical;
 }
