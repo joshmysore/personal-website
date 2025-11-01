@@ -46,16 +46,26 @@ export default function DevMode() {
     codeProjects: []
   });
 
-  const [newBlogPost, setNewBlogPost] = useState({
+  const [newBlogPost, setNewBlogPost] = useState<{
+    title: string;
+    content: string;
+    type: 'essay' | 'story' | 'poetry';
+  }>({
     title: '',
     content: '',
-    type: 'essay' as const
+    type: 'essay'
   });
 
-  const [newCreativeWork, setNewCreativeWork] = useState({
+  const [newCreativeWork, setNewCreativeWork] = useState<{
+    title: string;
+    description: string;
+    type: 'story' | 'poetry' | 'design' | 'music';
+    content: string;
+    link: string;
+  }>({
     title: '',
     description: '',
-    type: 'design' as const,
+    type: 'design',
     content: '',
     link: ''
   });
@@ -259,7 +269,7 @@ export default function DevMode() {
               value={newCreativeWork.title}
               onChange={(e) => setNewCreativeWork(prev => ({ ...prev, title: e.target.value }))}
             />
-          </div>
+          </div>  
           <div>
             <select
               className="dev-input"
