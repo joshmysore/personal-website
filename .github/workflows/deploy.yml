@@ -31,7 +31,10 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        run: |
+          npm run build
+          touch out/.nojekyll
+          echo 'joshmysore.com' > out/CNAME
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

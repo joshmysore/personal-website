@@ -1,4 +1,4 @@
-# Josh MySore - Personal Portfolio
+# Josh Mysore - Personal Portfolio
 
 A minimalist portfolio website built with Next.js 14, TypeScript, and TailwindCSS. Featuring elegant serif typography, smooth animations, and sections for creative works, coding projects, and photography.
 
