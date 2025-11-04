@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import Link from 'next/link';
+import PageDevMode from '@/components/PageDevMode';
 
 const posts = [
   {
@@ -17,10 +18,10 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-12">
-          <Link href="/" className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-6 transition-colors">
+    <div className="min-h-screen bg-gray-50 py-12 px-6 flex items-center justify-center">
+      <div className="max-w-4xl w-full">
+        <div className="text-center mb-12">
+          <Link href="/" className="inline-flex items-center text-gray-600 hover:text-orange-500 mb-6 transition-colors">
             <ArrowLeft size={20} className="mr-2" />
             Back to Home
           </Link>
@@ -55,7 +56,7 @@ export default function BlogPage() {
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
+                    className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm"
                   >
                     #{tag}
                   </span>
@@ -65,6 +66,7 @@ export default function BlogPage() {
           ))}
         </div>
       </div>
+      <PageDevMode page="blog" />
     </div>
   );
 }

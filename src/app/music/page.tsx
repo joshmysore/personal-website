@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowLeft, Play } from 'lucide-react';
 import Link from 'next/link';
+import PageDevMode from '@/components/PageDevMode';
 
 const tracks = [
   {
@@ -16,10 +17,10 @@ const tracks = [
 
 export default function MusicPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="mb-12">
-          <Link href="/" className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-6 transition-colors">
+    <div className="min-h-screen bg-gray-50 py-12 px-6 flex items-center justify-center">
+      <div className="max-w-5xl w-full">
+        <div className="text-center mb-12">
+          <Link href="/" className="inline-flex items-center text-gray-600 hover:text-orange-500 mb-6 transition-colors">
             <ArrowLeft size={20} className="mr-2" />
             Back to Home
           </Link>
@@ -37,7 +38,7 @@ export default function MusicPage() {
               className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all"
             >
               <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
+                <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center">
                   <Play size={32} className="text-white" />
                 </div>
                 <div className="flex-1">
@@ -58,6 +59,7 @@ export default function MusicPage() {
           ))}
         </div>
       </div>
+      <PageDevMode page="music" />
     </div>
   );
 }

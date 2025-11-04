@@ -16,10 +16,10 @@ const portfolio = [
 
 export default function ModelingPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-12">
-          <Link href="/" className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-6 transition-colors">
+    <div className="min-h-screen bg-gray-50 py-12 px-6 flex items-center justify-center">
+      <div className="max-w-7xl w-full">
+        <div className="text-center mb-12">
+          <Link href="/" className="inline-flex items-center text-gray-600 hover:text-orange-500 mb-6 transition-colors">
             <ArrowLeft size={20} className="mr-2" />
             Back to Home
           </Link>

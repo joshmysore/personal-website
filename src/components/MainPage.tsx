@@ -6,14 +6,14 @@ import { Code2, BookOpen, FileText, Brain, Camera, User, Music, PenTool } from '
 import Link from 'next/link';
 
 const categories = [
-  { name: 'Coding', icon: Code2, href: '/coding', color: '#3b82f6' },
-  { name: 'Poetry', icon: PenTool, href: '/poetry', color: '#ec4899' },
-  { name: 'Short Stories', icon: BookOpen, href: '/stories', color: '#8b5cf6' },
-  { name: 'Philosophy', icon: Brain, href: '/philosophy', color: '#10b981' },
-  { name: 'Photography', icon: Camera, href: '/photography', color: '#f59e0b' },
-  { name: 'Modeling', icon: User, href: '/modeling', color: '#ef4444' },
-  { name: 'Music', icon: Music, href: '/music', color: '#06b6d4' },
-  { name: 'Blog', icon: FileText, href: '/blog', color: '#6366f1' },
+  { name: 'Coding', icon: Code2, href: '/coding', color: '#ff6b35' },
+  { name: 'Poetry', icon: PenTool, href: '/poetry', color: '#ff6b35' },
+  { name: 'Short Stories', icon: BookOpen, href: '/stories', color: '#ff6b35' },
+  { name: 'Philosophy', icon: Brain, href: '/philosophy', color: '#ff6b35' },
+  { name: 'Photography', icon: Camera, href: '/photography', color: '#ff6b35' },
+  { name: 'Modeling', icon: User, href: '/modeling', color: '#ff6b35' },
+  { name: 'Music', icon: Music, href: '/music', color: '#ff6b35' },
+  { name: 'Blog', icon: FileText, href: '/blog', color: '#ff6b35' },
 ];
 
 export default function MainPage() {
@@ -60,9 +60,14 @@ export default function MainPage() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <h1 className="text-6xl md:text-8xl font-bold text-gray-900 mb-4">
-            Josh Mysore
-          </h1>
+          <Link href="/bio">
+            <motion.h1 
+              className="text-6xl md:text-8xl font-bold text-gray-900 mb-4 cursor-pointer hover:text-orange-500 transition-colors"
+              whileHover={{ scale: 1.05 }}
+            >
+              Josh Mysore
+            </motion.h1>
+          </Link>
           <div className="text-3xl md:text-5xl text-gray-600 h-20 flex items-center justify-center">
             <span className="font-light">{currentText}</span>
             <span className="animate-pulse ml-1">|</span>
